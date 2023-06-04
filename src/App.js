@@ -4,8 +4,7 @@ import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 
 function App() {
-  const isShowCart = useSelector(state => state.cart.showCart)
-  console.log(isShowCart);
+  const isShowCart = useSelector((state) => state.cart.showCart)
   
 
   return (
