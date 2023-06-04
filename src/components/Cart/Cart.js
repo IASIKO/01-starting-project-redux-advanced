@@ -5,13 +5,14 @@ import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const quantity = useSelector((state) => state.cart.quantity);
+  const price = useSelector((state) => state.product.price)
 
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>
         <CartItem
-          item={{ title: "Test Item", quantity: quantity, total: 18, price: 6 }}
+          item={{ title: "Test Item", quantity: quantity, total: quantity * price, price: price }}
         />
       </ul>
     </Card>
