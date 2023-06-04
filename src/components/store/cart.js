@@ -13,9 +13,7 @@ const cartSlice = createSlice({
       if (state.quantity > 0) {
         state.quantity--;
       }
-      if ((state.quantity === 0)) {
-        return (state.showCart = false);
-      }
+      return
     },
     toggleCart(state) {
       state.showCart = !state.showCart;
