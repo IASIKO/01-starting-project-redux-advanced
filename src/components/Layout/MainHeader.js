@@ -1,12 +1,14 @@
 import React from 'react';
 import CartButton from '../Cart/CartButton';
 import classes from './MainHeader.module.css';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../store/cart';
 
 const MainHeader = (props) => {
+  const dispatch = useDispatch()
 
-
-  const cartHandler = () => {
-
+  const cartToggleHandler = () => {
+    dispatch(cartActions.toggleCart())
   }
 
   return (
@@ -15,7 +17,7 @@ const MainHeader = (props) => {
       <nav>
         <ul>
           <li>
-            <CartButton onClick={cartHandler}/>
+            <CartButton onClick={cartToggleHandler}/>
           </li>
         </ul>
       </nav>
