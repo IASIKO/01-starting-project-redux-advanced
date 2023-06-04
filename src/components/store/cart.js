@@ -18,6 +18,9 @@ const cartSlice = createSlice({
     toggleCart(state) {
       state.showCart = !state.showCart;
     },
+    addToCart(state) {
+      state.quantity++
+    }
   },
 });
 
