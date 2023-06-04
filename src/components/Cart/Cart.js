@@ -7,14 +7,16 @@ const Cart = (props) => {
   const quantity = useSelector((state) => state.cart.quantity);
   const price = useSelector((state) => state.product.price)
 
+  const cartItem = quantity === 0
+
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
-      <ul>
+      {!cartItem && <ul>
         <CartItem
           item={{ title: "Test Item", quantity: quantity, total: quantity * price, price: price }}
         />
-      </ul>
+      </ul>}
     </Card>
   );
 };

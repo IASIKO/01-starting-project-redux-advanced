@@ -3,7 +3,10 @@ import ProductItem from './ProductItem';
 import classes from './Products.module.css';
 
 const Products = (props) => {
+  const title = useSelector((state) => state.product.title)
   const price = useSelector((state) => state.product.price)
+  const description = useSelector((state) => state.product.description)
+
   
 
   return (
@@ -11,9 +14,9 @@ const Products = (props) => {
       <h2>Buy your favorite products</h2>
       <ul>
         <ProductItem
-          title='Test'
+          title={title}
           price={price}
-          description='This is a first product - amazing!'
+          description={description}
         />
       </ul>
     </section>

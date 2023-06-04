@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialProductState = {price: 6};
+const initialProductState = {
+  title: "Test",
+  price: 6,
+  description: "This is a first product - amazing!",
+};
 
 const productSlice = createSlice({
   name: "product",
   initialState: initialProductState,
   reducers: {
-    addToCart(state, action) {
-        
-    },
+    addToCart(state, action) {},
   },
 });
 
