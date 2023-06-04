@@ -5,6 +5,7 @@ import Products from './components/Shop/Products';
 
 function App() {
   const isShowCart = useSelector(state => state.cart.showCart)
+  console.log(isShowCart);
   
 
   return (
