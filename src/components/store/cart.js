@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initalCartState = { quantity: 0, showCart: false };
+const initalCartState = {
+  items: [],
+  quantity: 0,
+  // showCart: false,
+};
 
 const cartSlice = createSlice({
   name: "cart",
@@ -13,14 +17,20 @@ const cartSlice = createSlice({
       if (state.quantity > 0) {
         state.quantity--;
       }
-      return 
+      return;
     },
-    toggleCart(state) {
-      state.showCart = !state.showCart;
+    // toggleCart(state) {
+    //   state.showCart = !state.showCart;
+    // },
+    addToCart(state, action) {
+      // state.quantity++;
+      const newItem = action.payload
+      const existingItem = state.items.find(item => item.id === newItem.id)
+      if (!existingItem) {
+        state.items.push()
+      }
     },
-    addToCart(state) {
-      state.quantity++
-    }
+    removeFromCart(){}
   },
 });
 
