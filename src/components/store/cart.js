@@ -24,13 +24,21 @@ const cartSlice = createSlice({
     // },
     addToCart(state, action) {
       // state.quantity++;
-      const newItem = action.payload
-      const existingItem = state.items.find(item => item.id === newItem.id)
+      const newItem = action.payload;
+      const existingItem = state.items.find((item) => item.id === newItem.id);
       if (!existingItem) {
-        state.items.push()
+        state.items.push({
+          itemId: newItem.id,
+          price: newItem.price,
+          quantity: 1,
+          totalPrice: newItem.price,
+          name: newItem.title
+        });
+      } else {
+        existingItem.quantity++ 
       }
     },
-    removeFromCart(){}
+    removeFromCart() {},
   },
 });
 
