@@ -10,7 +10,8 @@ const CartButton = (props) => {
   
 
   const cartToggleHandler = () => {
-    dispatch(uiActions.toggleCart());
+    // dispatch(cartActions.toggleCart());
+    dispatch(uiActions.toggle())
   };
   return (
     <button className={classes.button} onClick={cartToggleHandler}>
